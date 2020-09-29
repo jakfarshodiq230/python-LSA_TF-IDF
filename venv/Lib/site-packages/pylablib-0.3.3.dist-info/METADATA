@@ -1,0 +1,68 @@
+Metadata-Version: 2.1
+Name: pylablib
+Version: 0.3.3
+Summary: Collection of Python code for using in lab environment (data acquisition, device communication, data analysis)
+Home-page: https://github.com/AlexShkarin/pyLabLib
+Author: Alexey Shkarin
+Author-email: alex.shkarin@gmail.com
+License: MIT
+Project-URL: Documentation, https://pylablib.readthedocs.io
+Project-URL: Source, https://github.com/AlexShkarin/pyLabLib/
+Project-URL: Tracker, https://github.com/AlexShkarin/pyLabLib/issues
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Win32 (MS Windows)
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/x-rst
+Requires-Dist: future
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: matplotlib
+Requires-Dist: numba
+Requires-Dist: rpyc
+Provides-Extra: devio
+Requires-Dist: pyft232 ; extra == 'devio'
+Requires-Dist: pyvisa ; extra == 'devio'
+Requires-Dist: pyserial ; extra == 'devio'
+Requires-Dist: nidaqmx ; extra == 'devio'
+Requires-Dist: pywinusb ; extra == 'devio'
+Requires-Dist: websocket-client ; extra == 'devio'
+Provides-Extra: devio-basic
+Requires-Dist: pyft232 ; extra == 'devio-basic'
+Requires-Dist: pyvisa ; extra == 'devio-basic'
+Requires-Dist: pyserial ; extra == 'devio-basic'
+Requires-Dist: pyusb ; extra == 'devio-basic'
+Requires-Dist: websocket-client ; extra == 'devio-basic'
+Provides-Extra: gui
+Requires-Dist: pyqt5 ; extra == 'gui'
+Requires-Dist: sip ; extra == 'gui'
+Requires-Dist: pyqtgraph ; extra == 'gui'
+
+Overview
+=======================
+
+PyLabLib is a collection of code intended to simplify some of the coding tasks encountered in a physics laboratory.
+
+Some major parts include:
+    - Simpler loading and saving of data in text or binary files.
+    - Data tables with heterogeneous columns and more universal indexing (heavy overlap with pandas).
+    - Some data processing utilities: filtering, decimating, peak detection, FFT (mostly wrappers around NumPy and SciPy).
+    - Classes for device control (universal wrapper for pyVISA, pySerial and network backends).
+    - Classes for many specific devices (cameras, lasers, translation stages, etc).
+    - More user-friendly fitting interface.
+    - Multi-level dictionaries which are convenient for storing heterogeneous data and settings in human-readable format.
+    - A bunch more utilities dealing with file system (creating, moving and removing folders, zipping/unzipping, path normalization), network (simplified interface for client and server sockets), strings (serializing and de-serializing values), function introspection, and more.
+    - Additional tools for GUI generation and simpler multithreading built on top PyQt5 *(still in development stage: not completely documented, code organization and interfaces can change in later versions)*.
+
+The most recent version library is available on GitHub (https://github.com/AlexShkarin/pyLabLib), and the documentation can be found at http://pylablib.readthedocs.io/ .
+
+For a more comprehensive, specialized, and recent version of the library (also specific dll's required for some devices), check out `dev` branch of the GitHub repository.
+
